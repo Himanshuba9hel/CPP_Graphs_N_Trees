@@ -27,10 +27,25 @@ if (NOT GTest_FOUND)
     message (FATAL_ERROR "No GTest Found")
 endif()
 
-add_executable(Correct_Construction main.cpp tst_correct_construction.cpp)
+# --- Source Files ---
+# Ensure these paths are correct relative to THIS CMakeLists.txt file
+set(PROJECT_SOURCES
+    ../Constructors/graph_constructor.cpp
+    ../Constructors/tree_constructor.cpp  # Add this line so CMake compiles it
+)
+# --- Include Directories ---
+include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}/..
+    ${CMAKE_CURRENT_SOURCE_DIR}/../Constructors
+)
+
+add_executable(Correct_Construction
+    main.cpp tst_correct_construction.cpp
+    ${PROJECT_SOURCES}
+)
 add_test(NAME Correct_Construction COMMAND Correct_Construction)
 
 target_link_libraries(Correct_Construction PRIVATE GTest::GTest)
 if (GMock_FOUND)
-    target_link_libraries(Correct_Construction INTERFACE GTest::GMock)
+    target_link_libraries(Correct_Construction PRIVATE GTest::GMock)
 endif()
