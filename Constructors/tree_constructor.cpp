@@ -1,6 +1,6 @@
 #include "tree_constructor.h"
 
-Tree_Constructor::Tree_Constructor(int data = 0) {
+Tree_Constructor::Tree_Constructor(int data) {
     root = new Node(data);
 }
 
