@@ -10,6 +10,7 @@ public:
     Node* create_node(int data, Node* left, Node* right);
     Node* root = nullptr;
     Node* get_root();
+    void balanceInsert(Node* root, int data);
     bool insert(Node* node,int data);
 };
 
