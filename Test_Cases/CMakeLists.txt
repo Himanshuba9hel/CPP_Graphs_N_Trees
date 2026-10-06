@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(Correct_Construction LANGUAGES CXX)
+project(CorrectConstruction LANGUAGES CXX)
 
 enable_testing()
 
@@ -24,8 +24,8 @@ FetchContent_MakeAvailable(googletest)
 # --- Source Files ---
 # Ensure these paths are correct relative to THIS CMakeLists.txt file
 set(PROJECT_SOURCES
-    ../Constructors/graph_constructor.cpp
-    ../Constructors/tree_constructor.cpp  # Add this line so CMake compiles it
+    ../Constructors/GraphConstructor.cpp
+    ../Constructors/TreeConstructor.cpp  # Add this line so CMake compiles it
 )
 # --- Include Directories ---
 include_directories(
@@ -33,16 +33,16 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/../Constructors
 )
 
-add_executable(Correct_Construction
-    main.cpp tst_correct_construction.cpp
+add_executable(CorrectConstruction
+    main.cpp tstCorrectConstruction.cpp
     ${PROJECT_SOURCES}
 )
-add_test(NAME Correct_Construction COMMAND Correct_Construction)
+add_test(NAME CorrectConstruction COMMAND CorrectConstruction)
 
-target_link_libraries(Correct_Construction PRIVATE gtest gmock)
+target_link_libraries(CorrectConstruction PRIVATE gtest gmock)
 
 include(GNUInstallDirs)
-install(TARGETS Correct_Construction
+install(TARGETS CorrectConstruction
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}

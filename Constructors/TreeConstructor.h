@@ -11,6 +11,7 @@ public:
     Node* root = nullptr;
     Node* get_root();
     void balanceInsert(Node* root, int data);
+    void showTree(Node* root);
     bool insert(Node* node,int data);
 };
 

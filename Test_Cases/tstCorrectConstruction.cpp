@@ -1,11 +1,11 @@
 #include <gmock/gmock-matchers.h>
 #include <gtest/gtest.h>
-#include "../Constructors/tree_constructor.h"
+#include "../Constructors/TreeConstructor.h"
 using namespace testing;
 
-TEST(Tree_Constructor_Test, Correct_Construction)
+TEST(TreeConstructorTest, CorrectConstruction)
 {
-    Tree_Constructor *tree = new Tree_Constructor(10);
+    TreeConstructor *tree = new TreeConstructor(10);
     Node* node_right = tree->create_node(3, nullptr, nullptr);
     Node* node_left = tree->create_node(2, nullptr, nullptr);
     Node* node = tree->create_node(1, node_left, node_right);
