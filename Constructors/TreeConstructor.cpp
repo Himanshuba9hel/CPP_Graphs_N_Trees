@@ -1,23 +1,23 @@
 #include <cmath>
 #include <queue>
 
-#include "tree_constructor.h"
+#include "TreeConstructor.h"
 
-Tree_Constructor::Tree_Constructor(int data) {
+TreeConstructor::TreeConstructor(int data) {
     root = new Node(data);
 }
 
-Node *Tree_Constructor::create_node(int data = 0, Node* left = nullptr, Node* right = nullptr)
+Node *TreeConstructor::create_node(int data = 0, Node* left = nullptr, Node* right = nullptr)
 {
     Node *myNode = new Node(data, left, right);
     return myNode;
 }
 
-Node *Tree_Constructor::get_root(){
+Node *TreeConstructor::get_root(){
     return root;
 }
 
-void Tree_Constructor::balanceInsert(Node* root, int data){
+void TreeConstructor::balanceInsert(Node* root, int data){
     std::queue<Node*> childNodes;
     childNodes.push(root);
     while(!childNodes.empty()){
@@ -31,7 +31,7 @@ void Tree_Constructor::balanceInsert(Node* root, int data){
     }
 }
 
-bool Tree_Constructor::insert(Node* node, int data){
+bool TreeConstructor::insert(Node* node, int data){
     if(node->left == nullptr || node->right == nullptr){
         if(node->left == nullptr){
             node->left = new Node(data);
