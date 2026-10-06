@@ -31,6 +31,11 @@ void TreeConstructor::balanceInsert(Node* root, int data){
     }
 }
 
+void TreeConstructor::showTree(Node *root)
+{
+
+}
+
 bool TreeConstructor::insert(Node* node, int data){
     if(node->left == nullptr || node->right == nullptr){
         if(node->left == nullptr){
