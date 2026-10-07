@@ -2,7 +2,7 @@
 #define TREECONSTRUCTOR_H
 
 #include "node.h"
-
+#include <vector>
 class TreeConstructor
 {
 public:
@@ -13,6 +13,7 @@ public:
     void balanceInsert(Node* root, int data);
     void showTree(Node* root);
     bool insert(Node* node,int data);
+    std::vector<std::vector<int> > getTreeData(Node *root);
 };
 
 #endif // TREECONSTRUCTOR_H

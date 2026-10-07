@@ -31,6 +31,45 @@ void TreeConstructor::balanceInsert(Node* root, int data){
     }
 }
 
+std::vector<std::vector<int> > TreeConstructor::getTreeData(Node *root)
+{
+    std::vector<std::vector<int>> treeData;
+    if(root == nullptr)
+        return treeData;
+    return treeData = std::vector<std::vector<int>>(1,std::vector<int>(1,root->data));
+    std::queue<Node*>* nodeQueue = new std::queue<Node*>();
+    nodeQueue->push(root);
+    bool allChildNullptr = false;
+    while(!allChildNullptr) {
+        std::queue<Node*>* nextNodeQueue = new std::queue<Node*>();
+        std::vector<int> currentLevelValue;
+        while(nodeQueue->empty()){
+            Node* node = nodeQueue->front();
+            if(node->left == nullptr){
+                nextNodeQueue->push(nullptr);
+                nextNodeQueue->push(nullptr);
+                currentLevelValue.push_back(NULL);
+                currentLevelValue.push_back(NULL);
+            }else{
+                nextNodeQueue->push(nullptr);
+                nextNodeQueue->push(nullptr);
+                currentLevelValue.push_back(NULL);
+                currentLevelValue.push_back(NULL);
+            }
+            if(node->right == nullptr){
+                nextNodeQueue->push(nullptr);
+                nextNodeQueue->push(nullptr);
+                currentLevelValue.push_back(NULL);
+                currentLevelValue.push_back(NULL);
+            }
+        }
+    }
+    Node* node = new Node(
+                        12,
+    new Node(12,nullptr,nullptr),new Node(12));
+    // std::queue<int> treeNodes;
+}
+
 void TreeConstructor::showTree(Node *root)
 {
 
